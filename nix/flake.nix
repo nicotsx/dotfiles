@@ -6,9 +6,11 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
     let
       configuration = { pkgs, config, ... }: {
 
@@ -23,7 +25,9 @@
             pkgs.tmux
             pkgs.warp-terminal
             pkgs.obsidian
-            pkgs.brave
+            pkgs.ripgrep
+            pkgs.lazygit
+            # pkgs.brave
           ];
 
         homebrew = {
@@ -31,7 +35,7 @@
           brews = [
             "mas"
             "stow"
-            "lazygit"
+            "nvm"
           ];
           casks = [
             "the-unarchiver"
@@ -69,16 +73,21 @@
             done
           '';
 
+        users.users.nicolas.home = "/Users/nicolas";
+        nix.useDaemon = true;
+
         system.defaults = {
-          dock.autoHide = true;
-          dock.persistant-apps = [
+          dock.autohide = true;
+          dock.persistent-apps = [
             "${pkgs.warp-terminal}/Applications/Warp.app"
-            "${pkgs.brave}/Applications/Brave Browser.app"
+            # "${pkgs.brave}/Applications/Brave Browser.app"
             "${pkgs.obsidian}/Applications/Obsidian.app"
           ];
           finder.FXPreferredViewStyle = "clmv";
+          finder.AppleShowAllExtensions = true;
           loginwindow.GuestEnabled = false;
-          NSGlobalDomain.AppleInterfaceStyle = "yoyo";
+          NSGlobalDomain.AppleInterfaceStyle = "Dark";
+          screencapture.location = "~/Pictures/screenshots";
         };
 
         # Auto upgrade nix package and the daemon service.
@@ -117,6 +126,12 @@
               user = "nicolas";
               autoMigrate = true;
             };
+          }
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.nicolas = import ./home.nix;
           }
         ];
       };
