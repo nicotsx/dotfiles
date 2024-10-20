@@ -4,6 +4,12 @@
 
 ## Cheatsheet
 
+### Update packages
+
+```bash
+nix flake update
+```
+
 ### Search for a package
 
 #### Nixpkgs

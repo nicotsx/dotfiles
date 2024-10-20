@@ -23,6 +23,7 @@
             pkgs.tmux
             pkgs.warp-terminal
             pkgs.obsidian
+            pkgs.brave
           ];
 
         homebrew = {
@@ -30,6 +31,7 @@
           brews = [
             "mas"
             "stow"
+            "lazygit"
           ];
           casks = [
             "the-unarchiver"
@@ -38,6 +40,8 @@
             # "Tailscale" = "1475387142";
           };
           onActivation.cleanup = "zap";
+          onActivation.autoUpdate = true;
+          onActivation.upgrade = true;
         };
 
         fonts.packages = [
@@ -64,6 +68,18 @@
               ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
             done
           '';
+
+        system.defaults = {
+          dock.autoHide = true;
+          dock.persistant-apps = [
+            "${pkgs.warp-terminal}/Applications/Warp.app"
+            "${pkgs.brave}/Applications/Brave Browser.app"
+            "${pkgs.obsidian}/Applications/Obsidian.app"
+          ];
+          finder.FXPreferredViewStyle = "clmv";
+          loginwindow.GuestEnabled = false;
+          NSGlobalDomain.AppleInterfaceStyle = "yoyo";
+        };
 
         # Auto upgrade nix package and the daemon service.
         services.nix-daemon.enable = true;
