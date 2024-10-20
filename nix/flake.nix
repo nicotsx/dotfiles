@@ -20,6 +20,7 @@
         # $ nix-env -qaP | grep wget
         environment.systemPackages =
           [
+            pkgs.oh-my-zsh
             pkgs.neovim
             pkgs.mkalias
             pkgs.tmux
@@ -27,7 +28,9 @@
             pkgs.obsidian
             pkgs.ripgrep
             pkgs.lazygit
-            # pkgs.brave
+            pkgs.docker
+            pkgs.discord
+            pkgs.spotify
           ];
 
         homebrew = {
@@ -36,12 +39,17 @@
             "mas"
             "stow"
             "nvm"
+            "git-secrets"
           ];
           casks = [
             "the-unarchiver"
+            "brave-browser"
+            "hyperkey"
           ];
           masApps = {
-            # "Tailscale" = "1475387142";
+            "Hand Mirror" = 1502839586;
+            "Tailscale" = 1475387142;
+            "QuickShade" = 931571202;
           };
           onActivation.cleanup = "zap";
           onActivation.autoUpdate = true;
@@ -77,11 +85,13 @@
         nix.useDaemon = true;
 
         system.defaults = {
-          dock.autohide = true;
+          dock.autohide = false;
           dock.persistent-apps = [
             "${pkgs.warp-terminal}/Applications/Warp.app"
-            # "${pkgs.brave}/Applications/Brave Browser.app"
+            "/Applications/Brave Browser.app"
+            "/System/Applications/Calendar.app"
             "${pkgs.obsidian}/Applications/Obsidian.app"
+            "${pkgs.discord}/Applications/Discord.app"
           ];
           finder.FXPreferredViewStyle = "clmv";
           finder.AppleShowAllExtensions = true;

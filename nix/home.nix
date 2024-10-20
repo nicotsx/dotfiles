@@ -12,7 +12,5 @@
     ".config/nvim".source = ~/dotfiles/nvim;
   };
 
-
-
   programs.home-manager.enable = true;
 }
