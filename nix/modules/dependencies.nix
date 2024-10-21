@@ -3,6 +3,7 @@
 {
   environment.systemPackages =
     [
+      pkgs.eza
       pkgs.oh-my-zsh
       pkgs.neovim
       pkgs.mkalias
