@@ -31,6 +31,12 @@
           chmod -R 700 ~/.config/nvim
         '';
       };
+
+      "Developer/.gitkeep" = {
+        text = "";
+      };
     };
   };
+
+  programs.home-manager.enable = true;
 }
