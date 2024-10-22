@@ -14,7 +14,6 @@
     let
       configuration = { pkgs, config, ... }: {
         users.users.nicolas.home = "/Users/nicolas";
-        programs.zsh.enable = true;
       };
     in
     {
@@ -24,7 +23,7 @@
         modules = [
           ./modules/system.nix
           ./modules/nix-core.nix
-          ./modules/dependencies.nix
+          ./modules/apps.nix
           configuration
           nix-homebrew.darwinModules.nix-homebrew
           {

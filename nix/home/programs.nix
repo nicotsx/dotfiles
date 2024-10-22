@@ -9,6 +9,10 @@
         theme = "robbyrussell";
       };
 
+      initExtra = ''
+        export PATH="/opt/homebrew/bin:$PATH"
+      '';
+
       shellAliases = {
         "ls" = "eza";
       };
