@@ -11,6 +11,7 @@
 
       initExtra = ''
         export PATH="/opt/homebrew/bin:$PATH"
+        export PATH="/run/current-system/sw/bin:$PATH"
       '';
 
       shellAliases = {
