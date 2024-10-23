@@ -23,6 +23,7 @@
         modules = [
           ./modules/system.nix
           ./modules/nix-core.nix
+          ./modules/custom-apps
           ./modules/apps.nix
           configuration
           nix-homebrew.darwinModules.nix-homebrew

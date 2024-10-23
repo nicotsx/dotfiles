@@ -16,7 +16,7 @@
     spotify
     slack
     cargo
-    nodejs_20
+    nodejs
     python3
     php84Packages.composer
   ];
@@ -40,6 +40,7 @@
       "stow"
       "nvm"
       "git-secrets"
+      "ccat"
     ];
 
     casks = [
@@ -60,4 +61,7 @@
   fonts.packages = [
     (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
   ];
+
+  zip7.enable = true;
+  docker-desktop.enable = true;
 }

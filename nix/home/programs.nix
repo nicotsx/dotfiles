@@ -12,10 +12,13 @@
       initExtra = ''
         export PATH="/opt/homebrew/bin:$PATH"
         export PATH="/run/current-system/sw/bin:$PATH"
+
+        export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
       '';
 
       shellAliases = {
         "ls" = "eza";
+        "cat" = "ccat";
       };
     };
 

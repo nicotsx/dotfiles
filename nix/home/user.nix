@@ -17,7 +17,6 @@
           if [ ! -d ~/.tmux/plugins/tpm ]; then
             nix-shell -p git --run "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
           fi
-          tmux set-environment -g TMUX_PLUGIN_MANAGER_PATH \'~/.tmux/plugins/\'
         '';
       };
 
