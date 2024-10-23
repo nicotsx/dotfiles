@@ -17,7 +17,7 @@
       '';
 
       shellAliases = {
-        "ls" = "eza";
+        "ls" = "eza -la";
         "cat" = "ccat";
       };
     };

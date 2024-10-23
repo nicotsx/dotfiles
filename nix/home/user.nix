@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home = {
@@ -35,6 +35,13 @@
         text = "";
       };
     };
+
+    # Generate SSH key if it doesn't exist
+    activation.generateSSHKey = lib.mkAfter ''
+      if [ ! -f ~/.ssh/id_ed25519 ]; then
+        nix-shell -p openssh --run "ssh-keygen -t ed25519 -C \"github@thisprops.com\" -f ~/.ssh/id_ed25519 -N \"\" || true"
+      fi
+    '';
   };
 
   programs.home-manager.enable = true;
