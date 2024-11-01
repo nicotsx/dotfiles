@@ -47,12 +47,12 @@
           IdentityFile ~/.ssh/id_ed25519
 
         Host benevity
-            HostName github.com
-            User git
-            IdentityFile ~/.ssh/benevity
-            IdentitiesOnly yes
-            UseKeychain yes
-            AddKeysToAgent yes
+          HostName github.com
+          User git
+          IdentityFile ~/.ssh/benevity
+          IdentitiesOnly yes
+          UseKeychain yes
+          AddKeysToAgent yes
       '';
     };
   };
