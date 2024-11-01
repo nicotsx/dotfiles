@@ -14,6 +14,9 @@
         export PATH="/run/current-system/sw/bin:$PATH"
 
         export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
+        export PNPM_HOME="/Users/$USER/Library/pnpm"
+
+        export PATH="$PATH:$PNPM_HOME"
       '';
 
       shellAliases = {
@@ -42,6 +45,14 @@
           AddKeysToAgent yes
           UseKeychain yes
           IdentityFile ~/.ssh/id_ed25519
+
+        Host benevity
+            HostName github.com
+            User git
+            IdentityFile ~/.ssh/benevity
+            IdentitiesOnly yes
+            UseKeychain yes
+            AddKeysToAgent yes
       '';
     };
   };

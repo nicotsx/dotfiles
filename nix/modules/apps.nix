@@ -19,6 +19,7 @@
     nodejs
     python3
     php84Packages.composer
+    pnpm
   ];
   environment.variables.EDITOR = "nvim";
 

@@ -10,10 +10,14 @@
       #   source = ~/dotfiles/zsh/.zshrc;
       # };
 
-      ".config/tmux" = {
+      ".config/tmux-linked" = {
         enable = true;
         source = ~/dotfiles/tmux;
         onChange = ''
+          mkdir -p ~/.config/tmux
+          cp -r ~/.config/tmux-linked/* ~/.config/tmux
+          chmod -R 700 ~/.config/tmux
+
           if [ ! -d ~/.tmux/plugins/tpm ]; then
             nix-shell -p git --run "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm"
           fi
