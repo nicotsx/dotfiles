@@ -20,6 +20,8 @@
     python3
     php84Packages.composer
     pnpm
+    raycast
+    vscode
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -48,6 +50,7 @@
       "the-unarchiver"
       "brave-browser"
       "hyperkey"
+      "db-browser-for-sqlite"
     ];
 
     masApps = {
@@ -56,6 +59,7 @@
       "QuickShade" = 931571202;
       "Xcode" = 497799835;
       "AutoMounter" = 1160435653;
+      "DaisyDisk" = 411643860;
     };
   };
 
