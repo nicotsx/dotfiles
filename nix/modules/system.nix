@@ -5,12 +5,14 @@
     defaults = {
       dock = {
         autohide = false;
+        show-recents = false;
         persistent-apps = [
           "${pkgs.warp-terminal}/Applications/Warp.app"
           "/Applications/Brave Browser.app"
           "/System/Applications/Calendar.app"
           "${pkgs.obsidian}/Applications/Obsidian.app"
           "${pkgs.discord}/Applications/Discord.app"
+          "/Applications/Tweek.app"
         ];
       };
 
@@ -19,6 +21,8 @@
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
         ShowPathbar = true;
+        CreateDesktop = false;
+        ShowStatusBar = false;
       };
 
       NSGlobalDomain = {
@@ -51,7 +55,7 @@
         rm -rf /Applications/Nix\ Apps
         mkdir -p /Applications/Nix\ Apps
         find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-        while read src; do
+        while read -r src; do
           app_name=$(basename "$src")
           echo "copying $src" >&2
           ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"

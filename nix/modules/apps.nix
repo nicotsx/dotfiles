@@ -22,6 +22,7 @@
     pnpm
     raycast
     vscode
+    signal-desktop
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -60,6 +61,7 @@
       "Xcode" = 497799835;
       "AutoMounter" = 1160435653;
       "DaisyDisk" = 411643860;
+      "Tweek" = 1535438855;
     };
   };
 
