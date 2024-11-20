@@ -15,7 +15,6 @@
     discord
     spotify
     slack
-    cargo
     nodejs
     python3
     php84Packages.composer
@@ -23,6 +22,9 @@
     raycast
     vscode
     signal-desktop
+    rustup
+    dive
+    rectangle
   ];
   environment.variables.EDITOR = "nvim";
 
