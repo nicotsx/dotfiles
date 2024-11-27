@@ -43,6 +43,7 @@ return {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
+        sql = { "sql_formatter" },
         javascript = biome_lsp_or_prettier,
         typescript = biome_lsp_or_prettier,
         typescriptreact = biome_lsp_or_prettier,

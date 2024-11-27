@@ -57,7 +57,7 @@ vim.keymap.set("n", "<leader>lj", diagnostic_goto(true), { desc = "Next Diagnost
 vim.keymap.set("n", "<leader>lk", diagnostic_goto(false), { desc = "Previous Diagnostic" })
 
 -- Buffers
-vim.keymap.set("n", "<leader>c", LazyVim.ui.bufremove, { desc = "Close Buffer" })
+-- vim.keymap.set("n", "<leader>c", LazyVim.ui.bufremove, { desc = "Close Buffer" })
 
 -- Trigger code actions
 vim.keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
