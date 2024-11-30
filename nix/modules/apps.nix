@@ -47,6 +47,7 @@
       "nvm"
       "git-secrets"
       "ccat"
+      "tree"
     ];
 
     casks = [
