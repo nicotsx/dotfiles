@@ -15,7 +15,7 @@
     discord
     spotify
     slack
-    nodejs
+    # nodejs
     python3
     php84Packages.composer
     pnpm
@@ -25,6 +25,7 @@
     rustup
     dive
     rectangle
+    terraform
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -48,6 +49,9 @@
       "git-secrets"
       "ccat"
       "tree"
+      "fd"
+      "fzf"
+      "wget"
     ];
 
     casks = [
@@ -55,6 +59,7 @@
       "brave-browser"
       "hyperkey"
       "db-browser-for-sqlite"
+      "dozer"
     ];
 
     masApps = {
@@ -68,7 +73,7 @@
   };
 
   fonts.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
+    pkgs.nerd-fonts.hack
   ];
 
   zip7.enable = true;

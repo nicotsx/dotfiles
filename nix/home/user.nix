@@ -24,13 +24,14 @@
         '';
       };
 
-      ".config/nvim-linked" = {
+      ".config/nvim-source" = {
         source = ~/dotfiles/nvim;
-        executable = true;
+        recursive = true;
+        force = true;
         # Nvim doesn't like symlinks, so we need to copy the files
         onChange = ''
           mkdir -p ~/.config/nvim
-          cp -r ~/.config/nvim-linked/* ~/.config/nvim
+          cp -r ~/.config/nvim-source/* ~/.config/nvim
           chmod -R 700 ~/.config/nvim
         '';
       };

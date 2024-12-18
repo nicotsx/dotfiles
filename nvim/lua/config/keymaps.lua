@@ -39,9 +39,9 @@ vim.keymap.set("n", "<M-Right>", "<cmd>vertical resize +2<cr>", { desc = "Resize
 vim.keymap.set("i", "¬", "<cmd>lua require('cmp').complete()<cr>", { desc = "Trigger Completion" })
 
 -- Search
-vim.keymap.set("n", "<leader>sr", "<cmd>Telescope resume<cr>")
-vim.keymap.set("n", "<leader>sf", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
-vim.keymap.set("n", "<leader>st", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep" })
+vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua resume<cr>")
+vim.keymap.set("n", "<leader>sf", "<cmd>FzfLua files<cr>", { desc = "Find Files" })
+vim.keymap.set("n", "<leader>st", "<cmd>FzfLua grep_project<cr>", { desc = "Live Grep" })
 
 vim.keymap.set("n", "<leader>h", "<cmd>noh<cr>", { desc = "Clear Search Highlight" })
 

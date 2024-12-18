@@ -17,6 +17,13 @@
         export PNPM_HOME="/Users/$USER/Library/pnpm"
 
         export PATH="$PATH:$PNPM_HOME"
+
+        export PATH="/Users/$USER/.deno/bin:$PATH"
+        export PATH="/Users/$USER/.bun/bin:$PATH"
+
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
       '';
 
       shellAliases = {
