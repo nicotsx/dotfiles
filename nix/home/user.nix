@@ -36,6 +36,10 @@
         '';
       };
 
+      ".config/lazygit" = {
+        source = ~/dotfiles/lazygit;
+      };
+
       "Developer/.gitkeep" = {
         text = "";
       };

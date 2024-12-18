@@ -10,6 +10,8 @@
       };
 
       initExtra = ''
+        export XDG_CONFIG_HOME="$HOME/.config"
+
         export PATH="/opt/homebrew/bin:$PATH"
         export PATH="/run/current-system/sw/bin:$PATH"
 

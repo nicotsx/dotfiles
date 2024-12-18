@@ -26,6 +26,7 @@
     dive
     rectangle
     terraform
+    delta
   ];
   environment.variables.EDITOR = "nvim";
 
