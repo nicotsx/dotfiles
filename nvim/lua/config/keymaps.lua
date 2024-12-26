@@ -35,9 +35,6 @@ vim.keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Previous Buffer" }
 vim.keymap.set("n", "<M-Left>", "<cmd>vertical resize -2<cr>", { desc = "Resize Vertical -2" })
 vim.keymap.set("n", "<M-Right>", "<cmd>vertical resize +2<cr>", { desc = "Resize Vertical +2" })
 
--- trigger nvim-cmp completion
-vim.keymap.set("i", "¬", "<cmd>lua require('cmp').complete()<cr>", { desc = "Trigger Completion" })
-
 -- Search
 vim.keymap.set("n", "<leader>sr", "<cmd>FzfLua resume<cr>")
 vim.keymap.set("n", "<leader>sf", "<cmd>FzfLua files<cr>", { desc = "Find Files" })

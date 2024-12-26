@@ -60,7 +60,7 @@
       "brave-browser"
       "hyperkey"
       "db-browser-for-sqlite"
-      "dozer"
+      "legcord"
     ];
 
     masApps = {
