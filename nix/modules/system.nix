@@ -7,7 +7,7 @@
         autohide = false;
         show-recents = false;
         persistent-apps = [
-          "${pkgs.warp-terminal}/Applications/Warp.app"
+          "/Applications/Ghostty.app"
           "/Applications/Brave Browser.app"
           "/System/Applications/Calendar.app"
           "${pkgs.obsidian}/Applications/Obsidian.app"

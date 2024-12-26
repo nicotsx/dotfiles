@@ -7,7 +7,6 @@
     neovim
     mkalias
     tmux
-    warp-terminal
     obsidian
     ripgrep
     lazygit
@@ -15,7 +14,6 @@
     discord
     spotify
     slack
-    # nodejs
     python3
     php84Packages.composer
     pnpm
@@ -61,6 +59,7 @@
       "hyperkey"
       "db-browser-for-sqlite"
       "legcord"
+      "ghostty"
     ];
 
     masApps = {

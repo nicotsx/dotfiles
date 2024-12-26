@@ -1,4 +1,4 @@
 git:
   paging:
     colorArg: always
-    pager: delta --paging=never --color-only --syntax-theme=ansi
+    pager: delta --paging=never --color-only
