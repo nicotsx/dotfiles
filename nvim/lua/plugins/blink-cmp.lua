@@ -1,5 +1,12 @@
 return {
   {
+    "ibhagwan/fzf-lua",
+    keys = {
+      -- disable the keymap to grep files
+      { "<leader>/", false },
+    },
+  },
+  {
     "saghen/blink.cmp",
     opts = {
       completion = {
