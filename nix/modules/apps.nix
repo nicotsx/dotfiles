@@ -10,7 +10,6 @@
     obsidian
     ripgrep
     lazygit
-    docker
     discord
     spotify
     slack
@@ -39,6 +38,7 @@
 
     taps = [
       "homebrew/services"
+      "macos-fuse-t/homebrew-cask"
     ];
 
     brews = [
@@ -60,6 +60,9 @@
       "db-browser-for-sqlite"
       "legcord"
       "ghostty"
+      "docker"
+      "fuse-t"
+      "fuse-t-sshfs"
     ];
 
     masApps = {
@@ -77,5 +80,5 @@
   ];
 
   zip7.enable = true;
-  docker-desktop.enable = true;
+  docker-desktop.enable = false;
 }
