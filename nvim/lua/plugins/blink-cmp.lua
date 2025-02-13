@@ -26,6 +26,17 @@ return {
           lsp = {
             name = "LSP",
             module = "blink.cmp.sources.lsp",
+            enabled = true,
+          },
+          snippets = {
+            name = "Snippets",
+            module = "blink.cmp.sources.snippets",
+            enabled = false,
+          },
+          lazydev = {
+            name = "LazyDev",
+            module = "lazydev.integrations.blink",
+            score_offset = 100, -- show at a higher priority than lsp
           },
         },
       },

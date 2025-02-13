@@ -60,7 +60,7 @@
       "db-browser-for-sqlite"
       "legcord"
       "ghostty"
-      "docker"
+      # "docker"
       "fuse-t"
       "fuse-t-sshfs"
     ];

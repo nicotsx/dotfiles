@@ -42,6 +42,8 @@ vim.keymap.set("n", "<leader>st", "<cmd>FzfLua grep_project<cr>", { desc = "Live
 
 vim.keymap.set("n", "<leader>h", "<cmd>noh<cr>", { desc = "Clear Search Highlight" })
 
+-- vim.keymap.set("i", "¬", "<cmd>lua require('cmp').complete()<cr>", { desc = "Trigger Completion" })
+
 local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
   severity = severity and vim.diagnostic.severity[severity] or nil

@@ -149,6 +149,7 @@ return {
               "pwa-msedge",
               "pwa-extensionHost",
               "node-terminal",
+              "node",
             },
 
             -- Path for file logging
@@ -162,10 +163,10 @@ return {
           })
         end,
       },
-      {
-        "Joakker/lua-json5",
-        build = "./install.sh",
-      },
+      -- {
+      --   "Joakker/lua-json5",
+      --   build = "./install.sh",
+      -- },
     },
   },
 }
