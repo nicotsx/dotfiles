@@ -34,4 +34,10 @@ return {
     config = true,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
+  {
+    "nvzone/typr",
+    cmd = "TyprStats",
+    dependencies = "nvzone/volt",
+    opts = {},
+  },
 }
