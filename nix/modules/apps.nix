@@ -24,6 +24,7 @@
     rectangle
     terraform
     delta
+    # docker
   ];
   environment.variables.EDITOR = "nvim";
 
