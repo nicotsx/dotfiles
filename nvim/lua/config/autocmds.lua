@@ -283,10 +283,6 @@ require("nvim-web-devicons").set_icon({
   },
 })
 
--- next line runs this command: highlight NvimTreeFolderIcon guifg=#6d8086
-vim.cmd("highlight NvimTreeFolderIcon guifg=#fef65b")
--- vim.cmd("highlight NvimTreeFolderName guifg=#fff27a")
-
 local aug = vim.api.nvim_create_augroup("buf_large", { clear = true })
 
 vim.api.nvim_create_autocmd({ "BufReadPre" }, {
