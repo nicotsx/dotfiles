@@ -25,6 +25,7 @@
     terraform
     delta
     # docker
+    go
   ];
   environment.variables.EDITOR = "nvim";
 
