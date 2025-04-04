@@ -15,7 +15,7 @@ $ sh <(curl -L https://nixos.org/nix/install)
 2. Install system
 
 ```bash
-nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/dotfiles/.config/nix#developer
+nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake '~/dotfiles/nix#developer'
 ```
 
 2. Re-apply config 
