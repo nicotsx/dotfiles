@@ -26,6 +26,7 @@
     delta
     # docker
     go
+    postman
   ];
   environment.variables.EDITOR = "nvim";
 
