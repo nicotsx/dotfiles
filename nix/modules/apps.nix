@@ -13,12 +13,12 @@
     discord
     spotify
     slack
-    python3
+    python314Full
     php84Packages.composer
     pnpm
     raycast
     vscode
-    signal-desktop
+    signal-desktop-bin
     rustup
     dive
     rectangle
