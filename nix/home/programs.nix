@@ -9,7 +9,7 @@
         theme = "robbyrussell";
       };
 
-      initExtra = ''
+      initContent = ''
         export XDG_CONFIG_HOME="$HOME/.config"
         export DISABLE_AUTO_UPDATE=true
 

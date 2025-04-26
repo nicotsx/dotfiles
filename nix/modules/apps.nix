@@ -14,6 +14,7 @@
     spotify
     slack
     python314Full
+    pyright
     php84Packages.composer
     pnpm
     raycast
@@ -54,6 +55,7 @@
       "fd"
       "fzf"
       "wget"
+      "act"
     ];
 
     casks = [

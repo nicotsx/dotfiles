@@ -29,6 +29,9 @@ return {
       "shfmt",
       "stylua",
       "tailwindcss-language-server",
+      "biome",
+      "ruff",
+      "mypy",
     },
   },
 }
