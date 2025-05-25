@@ -25,7 +25,6 @@
     rectangle
     terraform
     delta
-    # docker
     go
     postman
   ];
@@ -67,6 +66,7 @@
       "ghostty"
       "fuse-t"
       "fuse-t-sshfs"
+      "vlc"
     ];
 
     masApps = {

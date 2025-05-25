@@ -2,6 +2,8 @@
 
 {
   system = {
+    primaryUser = "nicolas";
+
     defaults = {
       dock = {
         autohide = false;
