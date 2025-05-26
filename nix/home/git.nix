@@ -2,7 +2,7 @@
 
 {
   home.activation.removeExistingGitconfig = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
-    rm -f ~/.gitconfig
+    rm -f /Users/nicolas/.gitconfig
   '';
 
   programs.git = {

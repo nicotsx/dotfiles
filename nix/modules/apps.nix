@@ -26,7 +26,8 @@
     terraform
     delta
     go
-    postman
+    #postman
+    jetbrains.pycharm-professional
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -40,7 +41,6 @@
     };
 
     taps = [
-      "homebrew/services"
       "macos-fuse-t/homebrew-cask"
     ];
 
