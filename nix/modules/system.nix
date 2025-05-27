@@ -13,8 +13,6 @@
           "/Applications/Brave Browser.app"
           "/System/Applications/Calendar.app"
           "${pkgs.obsidian}/Applications/Obsidian.app"
-          "${pkgs.discord}/Applications/Discord.app"
-          "/Applications/Tweek.app"
         ];
       };
 
