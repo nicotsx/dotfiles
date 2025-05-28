@@ -29,6 +29,16 @@ local function biome_lsp_or_prettier()
   return { "jsonls" }
 end
 
+local function python_formatter()
+  local has_pylint = vim.fs.find({ ".pylintrc", "pylintrc" }, { upward = true })[1]
+
+  local has_ruff = vim.fs.find({ "ruff.toml" }, { upward = true })[1]
+
+  if has_ruff then
+    return { "ruff_format" }
+  end
+end
+
 return {
   "stevearc/conform.nvim",
   opts = function()
@@ -44,7 +54,8 @@ return {
         fish = { "fish_indent" },
         sh = { "shfmt" },
         sql = { "sql_formatter" },
-        go = { "gofmt", "gofumpt" },
+        go = { "gofmt" },
+        python = python_formatter(),
         javascript = biome_lsp_or_prettier,
         typescript = biome_lsp_or_prettier,
         typescriptreact = biome_lsp_or_prettier,

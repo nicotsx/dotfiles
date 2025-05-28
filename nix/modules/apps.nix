@@ -14,7 +14,8 @@
     spotify
     slack
     pyenv
-    pyright
+    uv
+    pylint
     php84Packages.composer
     pnpm
     raycast
@@ -56,6 +57,7 @@
       "fzf"
       "wget"
       "act"
+      "imagemagick"
     ];
 
     casks = [
