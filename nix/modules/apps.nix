@@ -13,7 +13,7 @@
     discord
     spotify
     slack
-    python314Full
+    pyenv
     pyright
     php84Packages.composer
     pnpm
