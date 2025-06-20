@@ -35,9 +35,7 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
   {
-    "nvzone/typr",
-    cmd = "TyprStats",
-    dependencies = "nvzone/volt",
+    "brenoprata10/nvim-highlight-colors",
     opts = {},
   },
 }

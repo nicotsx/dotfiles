@@ -25,8 +25,7 @@ local function biome_lsp_or_prettier()
     return { "biome-check" }
   end
 
-  -- Don't format
-  return { "jsonls" }
+  return { "biome-check" }
 end
 
 local function python_formatter()

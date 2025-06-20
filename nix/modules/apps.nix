@@ -29,7 +29,6 @@
     go
     #postman
     jetbrains.pycharm-professional
-    awscli
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -58,6 +57,7 @@
       "wget"
       "act"
       "imagemagick"
+      "libmagic"
     ];
 
     casks = [

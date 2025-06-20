@@ -40,6 +40,10 @@
         source = /Users/nicolas/dotfiles/lazygit;
       };
 
+      ".config/ghostty" = {
+        source = /Users/nicolas/dotfiles/ghostty;
+      };
+
       "Developer/.gitkeep" = {
         text = "";
       };
