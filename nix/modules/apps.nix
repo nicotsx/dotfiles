@@ -29,6 +29,7 @@
     go
     #postman
     jetbrains.pycharm-professional
+    notion-app
   ];
   environment.variables.EDITOR = "nvim";
 
