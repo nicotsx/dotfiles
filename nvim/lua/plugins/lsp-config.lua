@@ -46,6 +46,10 @@ return {
             workingDirectories = { mode = "auto" },
           },
         },
+        volar = {
+          filetypes = { "vue" },
+          root_dir = get_root_dir,
+        },
         biome = {
           enabled = biome_enabled,
           cmd = { "biome", "lsp-proxy" },

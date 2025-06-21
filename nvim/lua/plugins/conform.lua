@@ -25,17 +25,17 @@ local function biome_lsp_or_prettier()
     return { "biome-check" }
   end
 
-  return { "biome-check" }
+  return {}
 end
 
 local function python_formatter()
-  local has_pylint = vim.fs.find({ ".pylintrc", "pylintrc" }, { upward = true })[1]
-
   local has_ruff = vim.fs.find({ "ruff.toml" }, { upward = true })[1]
 
   if has_ruff then
     return { "ruff_format" }
   end
+
+  return {}
 end
 
 return {
@@ -46,7 +46,7 @@ return {
         timeout_ms = 3000,
         async = false, -- not recommended to change
         quiet = false, -- not recommended to change
-        lsp_format = "fallback", -- not recommended to change
+        -- lsp_format = "fallback", -- not recommended to change
       },
       formatters_by_ft = {
         lua = { "stylua" },
@@ -62,7 +62,7 @@ return {
         css = biome_lsp_or_prettier,
         html = biome_lsp_or_prettier,
         vue = biome_lsp_or_prettier,
-        json = biome_lsp_or_prettier,
+        json = { "biome-check" },
         markdown = biome_lsp_or_prettier,
       },
     }
