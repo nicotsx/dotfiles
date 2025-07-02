@@ -41,23 +41,14 @@ return {
         },
       },
       keymap = {
+        preset = "enter",
         ["<Tab>"] = {
-          function(cmp)
-            if cmp.is_visible() then
-              return
-            end
-            return true
-          end,
           "select_next",
+          "fallback",
         },
         ["<S-Tab>"] = {
-          function(cmp)
-            if cmp.is_visible() then
-              return
-            end
-            return true
-          end,
           "select_prev",
+          "fallback",
         },
         ["<C-f>"] = {},
         ["¬"] = {

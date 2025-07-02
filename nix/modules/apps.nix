@@ -30,6 +30,8 @@
     #postman
     jetbrains.pycharm-professional
     notion-app
+    kubernetes-helm
+    k9s
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -59,6 +61,7 @@
       "act"
       "imagemagick"
       "libmagic"
+      "spotify_player"
     ];
 
     casks = [
