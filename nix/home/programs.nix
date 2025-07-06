@@ -34,6 +34,7 @@
       shellAliases = {
         "ls" = "eza -la";
         "cat" = "ccat";
+        "gemini" = "npx https://github.com/google-gemini/gemini-cli";
       };
     };
 

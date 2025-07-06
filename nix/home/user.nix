@@ -36,6 +36,10 @@
         '';
       };
 
+      ".config/zellij" = {
+        source = /Users/nicolas/dotfiles/zellij;
+      };
+
       ".config/lazygit" = {
         source = /Users/nicolas/dotfiles/lazygit;
       };

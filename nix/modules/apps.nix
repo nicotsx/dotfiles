@@ -32,6 +32,7 @@
     notion-app
     kubernetes-helm
     k9s
+    zellij
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -62,6 +63,7 @@
       "imagemagick"
       "libmagic"
       "spotify_player"
+      "biome"
     ];
 
     casks = [
