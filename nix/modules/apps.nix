@@ -64,6 +64,7 @@
       "libmagic"
       "spotify_player"
       "biome"
+      "postgresql"
     ];
 
     casks = [

@@ -1,6 +1,16 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
     normal {
+        bind "Ctrl Alt Shift l" { SwitchToMode "Pane"; NewPane "Right"; SwitchToMode "Normal"; }
+        bind "Ctrl Alt Shift j" { SwitchToMode "Pane"; NewPane "Down"; SwitchToMode "Normal"; }
+        bind "Ctrl Alt Shift Right" { SwitchToMode "Tab"; GoToNextTab; SwitchToMode "Normal"; }
+        bind "Ctrl Alt Shift Left" { SwitchToMode "Tab"; GoToPreviousTab; SwitchToMode "Normal"; }
+        bind "Ctrl Alt Shift n" { SwitchToMode "Tab"; NewTab; SwitchToMode "Normal"; }
+        bind "Ctrl Alt Shift t" { SwitchToMode "Pane"; ToggleFloatingPanes; SwitchToMode "Normal"; }
+
+        bind "Ctrl Alt Shift k" { SwitchToMode "Tab"; CloseTab; SwitchToMode "Normal"; }
+        bind "Ctrl Alt Shift x" { SwitchToMode "Pane"; CloseFocus; SwitchToMode "Normal"; }
+
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
         // Create new right pane
@@ -182,8 +192,8 @@ keybinds {
         bind "Alt n" { NewPane; }
         bind "Alt i" { MoveTab "Left"; }
         bind "Alt o" { MoveTab "Right"; }
-        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt h" "Alt Left" { MoveFocus "Left"; }
+        bind "Alt l" "Alt Right" { MoveFocus "Right"; }
         bind "Alt j" "Alt Down" { MoveFocus "Down"; }
         bind "Alt k" "Alt Up" { MoveFocus "Up"; }
         bind "Alt =" "Alt +" { Resize "Increase"; }
@@ -227,7 +237,7 @@ keybinds {
     shared_except "locked" {
         bind "Ctrl h" {
             MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "move_focus_or_tab";
+                name "move_focus";
                 payload "left";
 
                 // Plugin Configuration
@@ -255,46 +265,10 @@ keybinds {
 
         bind "Ctrl l" {
             MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "move_focus_or_tab";
+                name "move_focus";
                 payload "right";
 
                 move_mod "ctrl";
-            };
-        }
-
-        bind "Alt h" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "resize";
-                payload "left";
-
-                resize_mod "alt"; // Optional, should be added on every command if you want to use it
-            };
-        }
-
-        bind "Alt j" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "resize";
-                payload "down";
-
-                resize_mod "alt";
-            };
-        }
-
-        bind "Alt k" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "resize";
-                payload "up";
-
-                resize_mod "alt";
-            };
-        }
-
-        bind "Alt l" {
-            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
-                name "resize";
-                payload "right";
-
-                resize_mod "alt";
             };
         }
     }
