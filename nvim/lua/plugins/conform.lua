@@ -22,7 +22,7 @@ local function biome_lsp_or_prettier()
   end
 
   if has_biome then
-    return { "biome-check" }
+    return { "biome" }
   end
 
   return {}
@@ -62,7 +62,7 @@ return {
         css = biome_lsp_or_prettier,
         html = biome_lsp_or_prettier,
         vue = biome_lsp_or_prettier,
-        json = { "biome-check" },
+        json = { "biome" },
         markdown = biome_lsp_or_prettier,
       },
     }
