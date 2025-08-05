@@ -20,6 +20,12 @@ mini_comment.setup({
 vim.keymap.set("n", "∆", ":m .-2<cr>")
 vim.keymap.set("n", "º", ":m .+1<cr>")
 
+vim.keymap.set("n", "<", ">>")
+vim.keymap.set("n", ">", "<<")
+
+vim.keymap.set("v", "<", ">gv")
+vim.keymap.set("v", ">", "<gv")
+
 vim.keymap.set("v", "∆", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "º", ":m '>+1<CR>gv=gv")
 

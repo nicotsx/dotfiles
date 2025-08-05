@@ -240,7 +240,6 @@ keybinds {
                 name "move_focus";
                 payload "left";
 
-                // Plugin Configuration
                 move_mod "ctrl"; // Optional, should be added on every command if you want to use it
             };
         }

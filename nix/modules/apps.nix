@@ -77,6 +77,7 @@
       "fuse-t"
       "fuse-t-sshfs"
       "vlc"
+      "cryptomator"
     ];
 
     masApps = {

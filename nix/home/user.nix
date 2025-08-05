@@ -5,49 +5,14 @@
     username = "nicolas";
     homeDirectory = "/Users/nicolas";
     stateVersion = "24.05";
+    activation.mySymlinks = lib.mkAfter ''
+      ln -sf /Users/nicolas/dotfiles/nvim /Users/nicolas/.config/nvim
+      ln -sf /Users/nicolas/dotfiles/zellij /Users/nicolas/.config/zellij
+      ln -sf /Users/nicolas/dotfiles/lazygit /Users/nicolas/.config/lazygit
+      ln -sf /Users/nicolas/dotfiles/ghostty /Users/nicolas/.config/ghostty
+      ln -sf /Users/nicolas/dotfiles/karabiner /Users/nicolas/.config/karabiner
+    '';
     file = {
-      # ".zshrc" = {
-      #   source = ~/dotfiles/zsh/.zshrc;
-      # };
-
-      ".config/tmux-linked" = {
-        enable = true;
-        source = /Users/nicolas/dotfiles/tmux;
-        onChange = ''
-          mkdir -p /Users/nicolas/.config/tmux
-          cp -r /Users/nicolas/.config/tmux-linked/* /Users/nicolas/.config/tmux
-          chmod -R 700 /Users/nicolas/.config/tmux
-
-          if [ ! -d /Users/nicolas/.tmux/plugins/tpm ]; then
-            nix-shell -p git --run "git clone https://github.com/tmux-plugins/tpm /Users/nicolas/.tmux/plugins/tpm"
-          fi
-        '';
-      };
-
-      ".config/nvim-source" = {
-        source = /Users/nicolas/dotfiles/nvim;
-        recursive = true;
-        force = true;
-        # Nvim doesn't like symlinks, so we need to copy the files
-        onChange = ''
-          mkdir -p /Users/nicolas/.config/nvim
-          cp -r /Users/nicolas/.config/nvim-source/* /Users/nicolas/.config/nvim
-          chmod -R 700 /Users/nicolas/.config/nvim
-        '';
-      };
-
-      ".config/zellij" = {
-        source = /Users/nicolas/dotfiles/zellij;
-      };
-
-      ".config/lazygit" = {
-        source = /Users/nicolas/dotfiles/lazygit;
-      };
-
-      ".config/ghostty" = {
-        source = /Users/nicolas/dotfiles/ghostty;
-      };
-
       "Developer/.gitkeep" = {
         text = "";
       };
