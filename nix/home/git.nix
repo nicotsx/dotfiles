@@ -1,8 +1,8 @@
-{ lib, ... }:
+{ lib, homeDirectory ? "/Users/nicolas", ... }:
 
 {
   home.activation.removeExistingGitconfig = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
-    rm -f /Users/nicolas/.gitconfig
+    rm -f ${homeDirectory}/.gitconfig
   '';
 
   programs.git = {

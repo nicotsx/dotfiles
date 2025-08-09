@@ -1,5 +1,5 @@
 {
-  description = "Blazing fast Darwin system flake";
+  description = "Multi-platform Nix configuration for macOS and Linux";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -12,20 +12,36 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
     let
-      configuration = { pkgs, config, ... }: {
-        users.users.nicolas.home = "/Users/nicolas";
+      # Shared configuration
+      mkUser = username: homeDir: {
+        users.users.${username}.home = homeDir;
       };
+      
+      # Common home-manager configuration
+      mkHomeManagerConfig = system:
+        let
+          isLinux = nixpkgs.lib.hasSuffix "-linux" system;
+          homeDir = if isLinux then "/home/nicolas" else "/Users/nicolas";
+        in {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.nicolas = import ./home {
+            inherit system isLinux;
+            homeDirectory = homeDir;
+            username = "nicolas";
+          };
+        };
     in
     {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#simple
+      # macOS (Darwin) configuration
       darwinConfigurations."developer" = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
         modules = [
-          ./modules/system.nix
-          ./modules/nix-core.nix
-          ./modules/custom-apps
-          ./modules/apps.nix
-          configuration
+          ./modules/darwin/system.nix
+          ./modules/shared/nix-core.nix
+          ./modules/shared/custom-apps
+          ./modules/darwin/apps.nix
+          (mkUser "nicolas" "/Users/nicolas")
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
@@ -36,15 +52,38 @@
             };
           }
           home-manager.darwinModules.home-manager
+          (mkHomeManagerConfig "aarch64-darwin")
+        ];
+      };
+
+      # Linux (NixOS) configuration
+      nixosConfigurations."developer" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./modules/linux/configuration.nix
+          ./modules/shared/nix-core.nix
+          ./modules/shared/custom-apps
+          ./modules/linux/apps.nix
+          (mkUser "nicolas" "/home/nicolas")
+          home-manager.nixosModules.home-manager
+          (mkHomeManagerConfig "x86_64-linux")
+        ];
+      };
+
+      # Home Manager standalone configuration (for Ubuntu)
+      homeConfigurations."nicolas" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+          ./home/default.nix
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.nicolas = import ./home;
+            home.username = "nicolas";
+            home.homeDirectory = "/home/nicolas";
           }
         ];
       };
 
-      # Expose the package set, including overlays, for convenience.
+      # Expose packages
       darwinPackages = self.darwinConfigurations."developer".pkgs;
+      nixosPackages = self.nixosConfigurations."developer".pkgs;
     };
 }

@@ -1,40 +1,15 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    eza
-    oh-my-zsh
-    neovim
-    mkalias
-    tmux
-    obsidian
-    ripgrep
-    lazygit
-    discord
-    spotify
-    slack
-    pyenv
-    uv
-    pylint
-    php84Packages.composer
-    pnpm
-    raycast
-    vscode
-    signal-desktop-bin
-    rustup
-    dive
-    rectangle
-    terraform
-    delta
-    go
-    #postman
-    jetbrains.pycharm-professional
-    notion-app
-    kubernetes-helm
-    k9s
-    zellij
+  imports = [
+    ../shared/apps.nix
   ];
-  environment.variables.EDITOR = "nvim";
+
+  # macOS-specific system packages (in addition to shared ones)
+  environment.systemPackages = with pkgs; [
+    # macOS-specific utilities
+    mkalias
+  ];
 
   homebrew = {
     enable = true;
@@ -90,10 +65,5 @@
     };
   };
 
-  fonts.packages = [
-    pkgs.nerd-fonts.hack
-  ];
-
   zip7.enable = true;
-  docker-desktop.enable = false;
 }

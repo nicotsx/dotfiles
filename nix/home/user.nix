@@ -1,16 +1,16 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, homeDirectory ? "/Users/nicolas", username ? "nicolas", isLinux ? false, ... }:
 
 {
   home = {
-    username = "nicolas";
-    homeDirectory = "/Users/nicolas";
+    username = username;
+    homeDirectory = homeDirectory;
     stateVersion = "24.05";
     activation.mySymlinks = lib.mkAfter ''
-      ln -sf /Users/nicolas/dotfiles/nvim /Users/nicolas/.config/nvim
-      ln -sf /Users/nicolas/dotfiles/zellij /Users/nicolas/.config/zellij
-      ln -sf /Users/nicolas/dotfiles/lazygit /Users/nicolas/.config/lazygit
-      ln -sf /Users/nicolas/dotfiles/ghostty /Users/nicolas/.config/ghostty
-      ln -sf /Users/nicolas/dotfiles/karabiner /Users/nicolas/.config/karabiner
+      ln -sf ${homeDirectory}/dotfiles/nvim ${homeDirectory}/.config/nvim
+      ln -sf ${homeDirectory}/dotfiles/zellij ${homeDirectory}/.config/zellij
+      ln -sf ${homeDirectory}/dotfiles/lazygit ${homeDirectory}/.config/lazygit
+      ln -sf ${homeDirectory}/dotfiles/ghostty ${homeDirectory}/.config/ghostty
+      ln -sf ${homeDirectory}/dotfiles/karabiner ${homeDirectory}/.config/karabiner
     '';
     file = {
       "Developer/.gitkeep" = {
@@ -20,8 +20,8 @@
 
     # Generate SSH key if it doesn't exist
     activation.generateSSHKey = lib.mkAfter ''
-      if [ ! -f /Users/nicolas/.ssh/id_ed25519 ]; then
-        nix-shell -p openssh --run "ssh-keygen -t ed25519 -C \"github@thisprops.com\" -f /Users/nicolas/.ssh/id_ed25519 -N \"\" || true"
+      if [ ! -f ${homeDirectory}/.ssh/id_ed25519 ]; then
+        nix-shell -p openssh --run "ssh-keygen -t ed25519 -C \"github@thisprops.com\" -f ${homeDirectory}/.ssh/id_ed25519 -N \"\" || true"
       fi
     '';
   };
