@@ -22,3 +22,5 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 vim.g.snacks_animate = false
+
+vim.opt.backupcopy = "yes"

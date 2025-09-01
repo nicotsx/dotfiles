@@ -30,6 +30,12 @@
 
         source ~/dotfiles/zsh/docker-completions.sh
 
+        export DEVKITPRO=/opt/devkitpro
+        export DEVKITARM=$DEVKITPRO/devkitARM
+        export PATH=$DEVKITARM/bin:$PATH
+
+        echo "if [ -f ~/.zshrc ]; then . ~/.zshrc; fi" >> ~/.zprofile
+
         # source $HOME/.local/bin/env
       '';
 

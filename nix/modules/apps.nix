@@ -47,6 +47,7 @@
 
     taps = [
       "macos-fuse-t/homebrew-cask"
+      "hashicorp/tap"
     ];
 
     brews = [
@@ -65,6 +66,10 @@
       "spotify_player"
       "biome"
       "postgresql"
+      "coreutils"
+      "libpng"
+      "pkg-config"
+      "packer"
     ];
 
     casks = [
@@ -78,6 +83,7 @@
       "fuse-t-sshfs"
       "vlc"
       "cryptomator"
+      "ngrok"
     ];
 
     masApps = {

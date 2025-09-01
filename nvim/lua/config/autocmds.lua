@@ -271,3 +271,17 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
   end,
 })
+
+require("lspconfig").clangd.setup({
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--completion-style=detailed",
+    "--function-arg-placeholders",
+    "--fallback-style=llvm",
+    "--compile-commands-dir=.",
+    "--query-driver=/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc",
+  },
+})

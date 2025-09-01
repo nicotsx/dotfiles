@@ -39,6 +39,26 @@ return {
         enabled = false,
       },
       servers = {
+        pyright = {
+          filetypes = { "python" },
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern(
+              "pyproject.toml",
+              "setup.py",
+              "setup.cfg",
+              "requirements.txt",
+              ".git"
+            )(fname)
+          end,
+        },
+        ruff = {
+          filetypes = { "python" },
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern("pyproject.toml", "ruff.toml", "requirements.txt", ".git")(
+              fname
+            )
+          end,
+        },
         eslint = {
           enabled = eslint_enabled,
           root_dir = get_root_dir,
