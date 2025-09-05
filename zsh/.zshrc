@@ -24,6 +24,17 @@ export PATH=$DEVKITARM/bin:$PATH
 
 echo "if [ -f ~/.zshrc ]; then . ~/.zshrc; fi" >> ~/.zprofile
 
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# Aliases
+alias ls="eza"
+alias cat="ccat"
+alias gemini="npx @google/gemini-cli"
+
 function check_venv() {
   if [[ -z "$VIRTUAL_ENV" ]]; then
     if [[ -d ./.venv ]]; then
@@ -44,4 +55,5 @@ function cd() {
   check_venv
 }
 
+unset VIRTUAL_ENV
 check_venv

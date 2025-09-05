@@ -12,7 +12,7 @@
     lazygit
     discord
     spotify
-    slack
+    # slack
     pyenv
     uv
     pylint
@@ -48,6 +48,7 @@
     taps = [
       "macos-fuse-t/homebrew-cask"
       "hashicorp/tap"
+      "mutagen-io/mutagen"
     ];
 
     brews = [
@@ -70,6 +71,7 @@
       "libpng"
       "pkg-config"
       "packer"
+      "mutagen"
     ];
 
     casks = [
@@ -93,6 +95,7 @@
       "Xcode" = 497799835;
       "AutoMounter" = 1160435653;
       "DaisyDisk" = 411643860;
+      "Slack" = 803453959;
     };
   };
 

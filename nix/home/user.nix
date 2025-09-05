@@ -11,6 +11,7 @@
       ln -sf /Users/nicolas/dotfiles/lazygit /Users/nicolas/.config/lazygit
       ln -sf /Users/nicolas/dotfiles/ghostty /Users/nicolas/.config/ghostty
       ln -sf /Users/nicolas/dotfiles/karabiner /Users/nicolas/.config/karabiner
+      ln -sf /Users/nicolas/dotfiles/zsh/.zshrc /Users/nicolas/.zshrc
     '';
     file = {
       "Developer/.gitkeep" = {
