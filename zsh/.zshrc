@@ -1,8 +1,47 @@
-export ZSH="$HOME/.oh-my-zsh"
+export XDG_CONFIG_HOME="$HOME/.config"
+export DISABLE_AUTO_UPDATE=true
 
-ZSH_THEME="robbyrussell"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/run/current-system/sw/bin:$PATH"
 
-plugins=(git)
+export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
+export PNPM_HOME="/Users/$USER/Library/pnpm"
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+export PATH="$PATH:$PNPM_HOME"
+
+export PATH="/Users/$USER/.deno/bin:$PATH"
+export PATH="/Users/$USER/.bun/bin:$PATH"
+
+export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+source ~/dotfiles/zsh/docker-completions.sh
+
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=$DEVKITPRO/devkitARM
+export PATH=$DEVKITARM/bin:$PATH
+
+echo "if [ -f ~/.zshrc ]; then . ~/.zshrc; fi" >> ~/.zprofile
+
+function check_venv() {
+  if [[ -z "$VIRTUAL_ENV" ]]; then
+    if [[ -d ./.venv ]]; then
+      source ./.venv/bin/activate
+    fi
+  else
+    parentdir="$(dirname "$VIRTUAL_ENV")"
+    if [[ "$PWD"/ != "$parentdir"/* ]]; then
+      if whence -w deactivate >/dev/null 2>&1; then
+        deactivate
+      fi
+    fi
+  fi
+}
+
+function cd() {
+  builtin cd "$@"
+  check_venv
+}
+
+check_venv
