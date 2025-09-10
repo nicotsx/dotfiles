@@ -64,7 +64,7 @@
       "act"
       "imagemagick"
       "libmagic"
-      "spotify_player"
+      # "spotify_player"
       "biome"
       "postgresql"
       "coreutils"
