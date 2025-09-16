@@ -72,6 +72,7 @@
       "pkg-config"
       "packer"
       "mutagen"
+      "kubectl"
     ];
 
     casks = [
