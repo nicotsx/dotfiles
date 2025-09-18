@@ -4,7 +4,6 @@ export DISABLE_AUTO_UPDATE=true
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/run/current-system/sw/bin:$PATH"
 
-export TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins"
 export PNPM_HOME="/Users/$USER/Library/pnpm"
 
 export PATH="$PATH:$PNPM_HOME"
@@ -22,8 +21,6 @@ source ~/dotfiles/zsh/docker-completions.sh
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=$DEVKITPRO/devkitARM
 export PATH=$DEVKITARM/bin:$PATH
-
-echo "if [ -f ~/.zshrc ]; then . ~/.zshrc; fi" >> ~/.zprofile
 
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"

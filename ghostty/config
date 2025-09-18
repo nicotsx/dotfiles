@@ -1,3 +1,4 @@
 theme = copilot
 window-decoration = none
 keybind = shift+enter=text:\n
+font-size = 12

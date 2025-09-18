@@ -1,5 +1,5 @@
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = {
     ensure_installed = {
       "actionlint",
@@ -31,6 +31,8 @@ return {
       "biome",
       "ruff",
       "mypy",
+      "json-lsp",
     },
   },
+  { "mason-org/mason-lspconfig.nvim" },
 }
