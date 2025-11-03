@@ -1,109 +1,110 @@
 {
-	"profiles": [
-		{
-			"complex_modifications": {
-				"rules": [
-					{
-						"description": "Remap grave_accent_and_tilde to angle brackets (< and >)",
-						"manipulators": [
-							{
-								"conditions": [
-									{
-										"name": "shift_held",
-										"type": "variable_if",
-										"value": 0
-									}
-								],
-								"from": {
-									"key_code": "grave_accent_and_tilde",
-									"modifiers": { "optional": ["any"] }
-								},
-								"to": [{ "key_code": "non_us_backslash" }],
-								"type": "basic"
-							},
-							{
-								"from": {
-									"key_code": "grave_accent_and_tilde",
-									"modifiers": {
-										"mandatory": ["left_shift"],
-										"optional": ["any"]
-									}
-								},
-								"to": [
-									{
-										"key_code": "non_us_backslash",
-										"modifiers": ["left_shift"]
-									}
-								],
-								"type": "basic"
-							}
-						]
-					},
-					{
-						"manipulators": [
-							{
-								"description": "Change caps_lock to control+option+shift.",
-								"from": {
-									"key_code": "caps_lock",
-									"modifiers": { "optional": ["any"] }
-								},
-								"to": [
-									{
-										"key_code": "left_shift",
-										"modifiers": ["left_control", "left_option"]
-									}
-								],
-								"type": "basic"
-							}
-						]
-					}
-				]
-			},
-			"devices": [
-				{
-					"fn_function_keys": [
-						{
-							"from": { "key_code": "f12" },
-							"to": [{ "key_code": "f12" }]
-						}
-					],
-					"identifiers": {
-						"is_keyboard": true,
-						"product_id": 5842,
-						"vendor_id": 2385
-					},
-					"ignore_vendor_events": true
-				},
-				{
-					"identifiers": {
-						"is_keyboard": true,
-						"product_id": 662,
-						"vendor_id": 1241
-					},
-					"simple_modifications": [
-						{
-							"from": { "key_code": "left_command" },
-							"to": [{ "key_code": "left_option" }]
-						},
-						{
-							"from": { "key_code": "left_option" },
-							"to": [{ "key_code": "left_command" }]
-						},
-						{
-							"from": { "key_code": "right_command" },
-							"to": [{ "key_code": "right_option" }]
-						},
-						{
-							"from": { "key_code": "right_option" },
-							"to": [{ "key_code": "left_command" }]
-						}
-					]
-				}
-			],
-			"name": "Default profile",
-			"selected": true,
-			"virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
-		}
-	]
+  "global": { "show_in_menu_bar": false },
+  "profiles": [
+    {
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Remap grave_accent_and_tilde to angle brackets (< and >)",
+            "manipulators": [
+              {
+                "conditions": [
+                  {
+                    "name": "shift_held",
+                    "type": "variable_if",
+                    "value": 0
+                  }
+                ],
+                "from": {
+                  "key_code": "grave_accent_and_tilde",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [{ "key_code": "non_us_backslash" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "grave_accent_and_tilde",
+                  "modifiers": {
+                    "mandatory": ["left_shift"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "non_us_backslash",
+                    "modifiers": ["left_shift"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "manipulators": [
+              {
+                "description": "Change caps_lock to control+option+shift.",
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "left_shift",
+                    "modifiers": ["left_control", "left_option"]
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      },
+      "devices": [
+        {
+          "fn_function_keys": [
+            {
+              "from": { "key_code": "f12" },
+              "to": [{ "key_code": "f12" }]
+            }
+          ],
+          "identifiers": {
+            "is_keyboard": true,
+            "product_id": 5842,
+            "vendor_id": 2385
+          },
+          "ignore_vendor_events": true
+        },
+        {
+          "identifiers": {
+            "is_keyboard": true,
+            "product_id": 662,
+            "vendor_id": 1241
+          },
+          "simple_modifications": [
+            {
+              "from": { "key_code": "left_command" },
+              "to": [{ "key_code": "left_option" }]
+            },
+            {
+              "from": { "key_code": "left_option" },
+              "to": [{ "key_code": "left_command" }]
+            },
+            {
+              "from": { "key_code": "right_command" },
+              "to": [{ "key_code": "right_option" }]
+            },
+            {
+              "from": { "key_code": "right_option" },
+              "to": [{ "key_code": "left_command" }]
+            }
+          ]
+        }
+      ],
+      "name": "Default profile",
+      "selected": true,
+      "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
+    }
+  ]
 }
 

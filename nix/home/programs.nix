@@ -6,6 +6,10 @@
       enable = false;
     };
 
+    java = {
+      enable = true;
+    };
+
     neovim = {
       enable = true;
       defaultEditor = true;

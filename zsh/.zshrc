@@ -11,6 +11,7 @@ export PATH="$PATH:$PNPM_HOME"
 export PATH="/Users/$USER/.deno/bin:$PATH"
 export PATH="/Users/$USER/.bun/bin:$PATH"
 export PATH="/Users/$USER/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -32,6 +33,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls="eza"
 alias cat="ccat"
 alias gemini="npx @google/gemini-cli"
+alias pip="uv pip"
 
 function check_venv() {
   if [[ -z "$VIRTUAL_ENV" ]]; then
@@ -55,3 +57,9 @@ function cd() {
 
 unset VIRTUAL_ENV
 check_venv
+
+# bun completions
+[ -s "/Users/nicolas/.bun/_bun" ] && source "/Users/nicolas/.bun/_bun"
+
+# Created by `pipx` on 2025-09-25 14:56:42
+export PATH="$PATH:/Users/nicolas/.local/bin"

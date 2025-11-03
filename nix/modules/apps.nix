@@ -33,6 +33,7 @@
     kubernetes-helm
     k9s
     zellij
+    lua54Packages.luarocks
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -73,6 +74,9 @@
       "packer"
       "mutagen"
       "kubectl"
+      "pipx"
+      "maven"
+      "swagger-codegen"
     ];
 
     casks = [

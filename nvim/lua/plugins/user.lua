@@ -27,9 +27,6 @@ return {
     },
   },
   {
-    "brenoprata10/nvim-highlight-colors",
-  },
-  {
     "davidmh/mdx.nvim",
     config = true,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
