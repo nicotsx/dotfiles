@@ -14,6 +14,7 @@ return {
         set_light_mode = function()
           -- vim.api.nvim_set_option_value("background", "light", {})
           -- require("config.user.colorscheme-light").setup()
+          vim.api.nvim_set_option_value("background", "dark", {})
           require("config.user.colorscheme").setup()
         end,
       })

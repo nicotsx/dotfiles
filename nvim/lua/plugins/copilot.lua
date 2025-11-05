@@ -2,21 +2,21 @@ return {
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    requires = {
-      "copilotlsp-nvim/copilot-lsp",
-    },
+    -- requires = {
+    --   "copilotlsp-nvim/copilot-lsp",
+    -- },
     build = ":Copilot auth",
     event = "InsertEnter",
     opts = {
-      nes = {
-        enabled = true,
-        auto_trigger = true,
-        keymap = {
-          accept_and_goto = "<leader>p",
-          accept = false,
-          dismiss = "<Esc>",
-        },
-      },
+      -- nes = {
+      --   enabled = true,
+      --   auto_trigger = true,
+      --   keymap = {
+      --     accept_and_goto = "<leader>p",
+      --     accept = false,
+      --     dismiss = "<Esc>",
+      --   },
+      -- },
       suggestion = {
         enabled = true,
         auto_trigger = true,
