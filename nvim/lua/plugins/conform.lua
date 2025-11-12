@@ -24,12 +24,12 @@ local function biome_lsp_or_prettier()
     "biome.jsonc",
   }, { upward = true, path = start_dir })[1]
 
-  if has_prettier then
-    return { "prettier" }
-  end
-
   if has_biome then
     return { "biome" }
+  end
+
+  if has_prettier then
+    return { "prettier" }
   end
 
   return {}

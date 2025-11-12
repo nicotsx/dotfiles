@@ -77,6 +77,7 @@
       "pipx"
       "maven"
       "swagger-codegen"
+      "opencode"
     ];
 
     casks = [
