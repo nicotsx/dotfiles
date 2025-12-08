@@ -63,3 +63,6 @@ check_venv
 
 # Created by `pipx` on 2025-09-25 14:56:42
 export PATH="$PATH:/Users/nicolas/.local/bin"
+
+# Added by Antigravity
+export PATH="/Users/nicolas/.antigravity/antigravity/bin:$PATH"

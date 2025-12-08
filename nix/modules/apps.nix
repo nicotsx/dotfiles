@@ -11,7 +11,6 @@
     ripgrep
     lazygit
     discord
-    spotify
     # slack
     pyenv
     uv
@@ -92,6 +91,7 @@
       "vlc"
       "cryptomator"
       "ngrok"
+      "spotify"
     ];
 
     masApps = {

@@ -5,24 +5,24 @@
     rm -f /Users/nicolas/.gitconfig
   '';
 
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      features = "side-by-side";
+    };
+  };
+
   programs.git = {
     enable = true;
     lfs.enable = true;
 
-    userName = "Nicolas Meienberger";
-    userEmail = "github@thisprops.com";
-
-    extraConfig = {
+    settings = {
+      user.name = "Nicolas Meienberger";
+      user.email = "github@thisprops.com";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
-    };
-
-    delta = {
-      enable = true;
-      options = {
-        features = "side-by-side";
-      };
     };
   };
 }
