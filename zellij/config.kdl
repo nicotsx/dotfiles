@@ -186,9 +186,10 @@ keybinds {
     }
 
     shared_except "locked" {
-        bind "Ctrl g" { SwitchToMode "Locked"; }
+        unbind "Ctrl g";
+        unbind "Alt f";
         bind "Ctrl q" { Quit; }
-        bind "Alt f" { ToggleFloatingPanes; }
+        // bind "Alt f" { ToggleFloatingPanes; }
         bind "Alt n" { NewPane; }
         bind "Alt i" { MoveTab "Left"; }
         bind "Alt o" { MoveTab "Right"; }
