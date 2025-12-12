@@ -26,11 +26,11 @@ return {
       { "<leader>st", false },
     },
   },
-  {
-    "davidmh/mdx.nvim",
-    config = true,
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
+  -- {
+  --   "davidmh/mdx.nvim",
+  --   config = true,
+  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
+  -- },
   {
     "brenoprata10/nvim-highlight-colors",
     opts = {},
