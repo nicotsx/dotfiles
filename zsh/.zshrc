@@ -2,6 +2,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export DISABLE_AUTO_UPDATE=true
 
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$(gem environment gemdir)/bin:$PATH"
 export PATH="/run/current-system/sw/bin:$PATH"
 
 export PNPM_HOME="/Users/$USER/Library/pnpm"

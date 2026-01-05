@@ -49,9 +49,12 @@
       "macos-fuse-t/homebrew-cask"
       "hashicorp/tap"
       "mutagen-io/mutagen"
+      "anomalyco/tap"
+      # "tw93/tap"
     ];
 
     brews = [
+      "mole"
       "mas"
       "stow"
       "nvm"
@@ -76,7 +79,8 @@
       "pipx"
       "maven"
       "swagger-codegen"
-      "opencode"
+      "anomalyco/tap/opencode"
+      "restic"
     ];
 
     casks = [

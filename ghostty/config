@@ -1,5 +1,5 @@
 theme = copilot
-window-decoration = none
+
 keybind = shift+enter=text:\n
 font-size = 14
 font-family = JetBrains Mono
