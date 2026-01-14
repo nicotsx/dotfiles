@@ -1,10 +1,5 @@
 return {
   {
-    -- Image Preview
-    "3rd/image.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-  {
     "nvim-mini/mini.comment",
     event = "VeryLazy",
   },
