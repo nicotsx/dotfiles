@@ -6,16 +6,13 @@
     oh-my-zsh
     neovim
     mkalias
-    tmux
     obsidian
     ripgrep
     lazygit
     discord
-    # slack
     pyenv
     uv
     pylint
-    php84Packages.composer
     pnpm
     raycast
     vscode
@@ -23,16 +20,14 @@
     rustup
     dive
     rectangle
-    terraform
     delta
     go
-    #postman
-    jetbrains.pycharm-professional
     notion-app
     kubernetes-helm
     k9s
     zellij
     lua54Packages.luarocks
+    netbird
   ];
   environment.variables.EDITOR = "nvim";
 
@@ -67,7 +62,6 @@
       "act"
       "imagemagick"
       "libmagic"
-      # "spotify_player"
       "biome"
       "postgresql"
       "coreutils"
@@ -81,6 +75,7 @@
       "swagger-codegen"
       "anomalyco/tap/opencode"
       "restic"
+      "watchman"
     ];
 
     casks = [
@@ -96,6 +91,7 @@
       "cryptomator"
       "ngrok"
       "spotify"
+      "zulu@17"
     ];
 
     masApps = {

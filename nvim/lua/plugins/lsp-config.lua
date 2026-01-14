@@ -57,7 +57,7 @@ return {
           root_dir = get_root_dir,
         },
         biome = {
-          -- enabled = biome_enabled,
+          enabled = true,
           cmd = { "biome", "lsp-proxy" },
           filetypes = {
             "javascript",
@@ -73,7 +73,7 @@ return {
             "css",
           },
           -- root_dir = get_biome_root_dir,
-          -- single_file_support = false,
+          single_file_support = false,
         },
         oxlint = {
           cmd = { "oxc_language_server" },

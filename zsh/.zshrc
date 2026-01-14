@@ -13,7 +13,7 @@ export PATH="$PATH:$PNPM_HOME"
 export PATH="/Users/$USER/.deno/bin:$PATH"
 export PATH="/Users/$USER/.bun/bin:$PATH"
 export PATH="/Users/$USER/.cargo/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
+export PATH="$(go env GOPATH)/bin:$PATH"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -69,6 +69,9 @@ export PATH="$PATH:/Users/nicolas/.local/bin"
 
 # Added by Antigravity
 export PATH="/Users/nicolas/.antigravity/antigravity/bin:$PATH"
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
 
 # Load secrets from git-ignored file
 [ -f ~/dotfiles/zsh/.zshrc.secrets ] && source ~/dotfiles/zsh/.zshrc.secrets
