@@ -75,6 +75,15 @@ return {
           -- root_dir = get_biome_root_dir,
           -- single_file_support = false,
         },
+        oxlint = {
+          cmd = { "oxc_language_server" },
+          settings = {
+            oxc_language_server = {
+              typeAware = true,
+              requireConfig = true,
+            },
+          },
+        },
         tsserver = {
           root_dir = get_root_dir,
         },

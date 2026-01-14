@@ -5,3 +5,6 @@ nvim/nvim
 zellij/zellij
 
 *.bak
+
+# Secrets
+zsh/.zshrc.secrets

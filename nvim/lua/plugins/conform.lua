@@ -24,6 +24,14 @@ local function biome_lsp_or_prettier()
     "biome.jsonc",
   }, { upward = true, path = start_dir })[1]
 
+  local has_ox = vim.fs.find({
+    ".oxfmtrc.json",
+  }, { upward = true, path = start_dir })[1]
+
+  if has_ox then
+    return { "oxfmt" }
+  end
+
   if has_biome then
     return { "biome" }
   end
@@ -70,7 +78,7 @@ return {
         css = biome_lsp_or_prettier,
         html = biome_lsp_or_prettier,
         vue = { "prettier" },
-        json = { "biome" },
+        json = biome_lsp_or_prettier,
         markdown = biome_lsp_or_prettier,
       },
     }
