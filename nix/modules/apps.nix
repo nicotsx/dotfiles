@@ -76,6 +76,7 @@
       "anomalyco/tap/opencode"
       "restic"
       "watchman"
+      "cocoapods"
     ];
 
     casks = [

@@ -6,13 +6,13 @@
     homeDirectory = "/Users/nicolas";
     stateVersion = "24.05";
     activation.mySymlinks = lib.mkAfter ''
-      ln -sf /Users/nicolas/dotfiles/nvim /Users/nicolas/.config/nvim
-      ln -sf /Users/nicolas/dotfiles/zellij /Users/nicolas/.config/zellij
-      ln -sf /Users/nicolas/dotfiles/lazygit /Users/nicolas/.config/lazygit
-      ln -sf /Users/nicolas/dotfiles/ghostty /Users/nicolas/.config/ghostty
-      ln -sf /Users/nicolas/dotfiles/karabiner /Users/nicolas/.config/karabiner
-      ln -sf /Users/nicolas/dotfiles/zsh/.zshrc /Users/nicolas/.zshrc
-      ln -sf /Users/nicolas/dotfiles/opencode /Users/nicolas/.config/opencode
+      ln -snf /Users/nicolas/dotfiles/nvim /Users/nicolas/.config/nvim
+      ln -snf /Users/nicolas/dotfiles/zellij /Users/nicolas/.config/zellij
+      ln -snf /Users/nicolas/dotfiles/lazygit /Users/nicolas/.config/lazygit
+      ln -snf /Users/nicolas/dotfiles/ghostty /Users/nicolas/.config/ghostty
+      ln -snf /Users/nicolas/dotfiles/karabiner /Users/nicolas/.config/karabiner
+      ln -snf /Users/nicolas/dotfiles/zsh/.zshrc /Users/nicolas/.zshrc
+      ln -snf /Users/nicolas/dotfiles/opencode /Users/nicolas/.config/opencode
     '';
     file = {
       "Developer/.gitkeep" = {
