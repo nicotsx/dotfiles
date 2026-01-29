@@ -4,6 +4,7 @@ keybinds {
         unbind "Ctrl p";
         unbind "Ctrl t";
 
+        bind "Ctrl Alt Shift F" { ToggleFocusFullscreen; }
         bind "Ctrl Alt Shift l" { SwitchToMode "Pane"; NewPane "Right"; SwitchToMode "Normal"; }
         bind "Ctrl Alt Shift j" { SwitchToMode "Pane"; NewPane "Down"; SwitchToMode "Normal"; }
         bind "Ctrl Alt Shift Right" { SwitchToMode "Tab"; GoToNextTab; SwitchToMode "Normal"; }
