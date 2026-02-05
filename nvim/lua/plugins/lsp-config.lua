@@ -99,6 +99,10 @@ return {
             },
           },
         },
+        vtsls = {
+          enabled = false,
+        },
+        tsgo = {},
       },
     },
   },
